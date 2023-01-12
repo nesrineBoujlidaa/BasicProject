@@ -5,6 +5,8 @@ import com.talan.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 /**
  * Person service implement.
  */
@@ -16,7 +18,7 @@ public class PersonServiceImpl implements PersonService {
     
 
     @Override
-    public Iterable<Person> listAllPersons() {
+    public Collection<Person> listAllPersons() {
         return personRepository.findAll();
     }
 
@@ -27,7 +29,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person savePerson(Person person) {
-        return personRepository.save(person);
+        return personRepository.saveAndFlush(person);
     }
 
     @Override

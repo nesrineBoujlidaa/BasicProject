@@ -1,7 +1,6 @@
-C:\Users\nboujlida\Downloads\springboot-crud-demo-master\springboot-crud-demo-master\src\main\java\com\ensat\repositories\ProductRepository.java
-C:\Users\nboujlida\Downloads\springboot-crud-demo-master\springboot-crud-demo-master\src\main\java\com\ensat\SpringBootWebApplication.java
-C:\Users\nboujlida\Downloads\springboot-crud-demo-master\springboot-crud-demo-master\src\main\java\com\ensat\services\ProductServiceImpl.java
-C:\Users\nboujlida\Downloads\springboot-crud-demo-master\springboot-crud-demo-master\src\main\java\com\ensat\entities\Product.java
-C:\Users\nboujlida\Downloads\springboot-crud-demo-master\springboot-crud-demo-master\src\main\java\com\ensat\controllers\ProductController.java
-C:\Users\nboujlida\Downloads\springboot-crud-demo-master\springboot-crud-demo-master\src\main\java\com\ensat\services\ProductService.java
-C:\Users\nboujlida\Downloads\springboot-crud-demo-master\springboot-crud-demo-master\src\main\java\com\ensat\controllers\IndexController.java
+C:\Users\rnaimi\Downloads\BasicProject\BackEnd\src\main\java\com\talan\repositories\PersonRepository.java
+C:\Users\rnaimi\Downloads\BasicProject\BackEnd\src\main\java\com\talan\services\PersonServiceImpl.java
+C:\Users\rnaimi\Downloads\BasicProject\BackEnd\src\main\java\com\talan\entities\Person.java
+C:\Users\rnaimi\Downloads\BasicProject\BackEnd\src\main\java\com\talan\controllers\PersonController.java
+C:\Users\rnaimi\Downloads\BasicProject\BackEnd\src\main\java\com\talan\services\PersonService.java
+C:\Users\rnaimi\Downloads\BasicProject\BackEnd\src\main\java\com\talan\SpringBootWebApplication.java

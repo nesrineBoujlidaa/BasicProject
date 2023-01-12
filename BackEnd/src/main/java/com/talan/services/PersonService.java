@@ -2,9 +2,11 @@ package com.talan.services;
 
 import com.talan.entities.Person;
 
+import java.util.Collection;
+
 public interface PersonService {
 
-    Iterable<Person> listAllPersons();
+    Collection<Person> listAllPersons();
 
     Person getPersonById(Integer id);
 
