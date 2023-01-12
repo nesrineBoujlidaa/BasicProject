@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-child-form',
@@ -8,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class ChildFormComponent implements OnInit {
 
   constructor() { }
+  childForm : FormGroup;
 
   ngOnInit() {
+    this.childForm = new FormGroup({
+      salary: new FormControl(Validators.required),
+      address: new FormControl(Validators.required)
+    })
   }
 
 }

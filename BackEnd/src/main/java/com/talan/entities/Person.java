@@ -20,7 +20,6 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @JsonProperty("name")
     @Column(name ="name")
     private String name;
 
@@ -32,7 +31,11 @@ public class Person {
 
     @Column(name ="phone")
     private String phone;
-    private String salary;
+
+    @Column(name ="salary")
+    private Long salary;
+
+    @Column(name ="address")
     private String address;
     }
 
