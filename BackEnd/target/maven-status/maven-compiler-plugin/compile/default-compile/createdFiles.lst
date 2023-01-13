@@ -1,0 +1,6 @@
+com\talan\entities\Person.class
+com\talan\services\PersonService.class
+com\talan\services\PersonServiceImpl.class
+com\talan\SpringBootWebApplication.class
+com\talan\controllers\PersonController.class
+com\talan\repositories\PersonRepository.class

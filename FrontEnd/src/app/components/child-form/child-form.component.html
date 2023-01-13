@@ -1,0 +1,28 @@
+<form #parentForm= "ngForm">
+<div class="row gutters">
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <button type="button" (click)="incrementSalary()" class="btn btn-secondary">Increment</button>
+  </div>
+  <div style="position: absolute; left: 10px;" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+      <label for="Street">Address</label>
+      <input type="name"  [(ngModel)]="address" name="address" class="form-control" id="Street"
+             >
+      <label for="status">Status</label>
+      <input type="status" #status class="form-control"  formControlName ="status" id="status" placeholder="Enter status">
+
+    <button (click)="sendMessage(status.value)">Send Status</button>
+    </div>
+  </div>
+
+</div>
+<div class="row gutters">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="text-right">
+      <button type="button" id="submit" style="position: absolute; left: 650px;" name="submit" [disabled] = "!childForm.valid" class="btn btn-outline-primary">Add</button>
+      <button type="button" id="cancel" name="cancel" class="btn btn-outline-secondary">Cancel</button>
+    </div>
+  </div>
+</div>
+</form>
+

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row gutters">
+    <form #parentForm= "ngForm">
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <h6 class="mb-2 text-primary">Personal Details</h6>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" #pname name="name" class="form-control" [(ngModel)]="user.name" id="fullName" >
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="eMail">Email</label>
+                <input type="email" name="email" class="form-control" [(ngModel)]="user.email" id="eMail">
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" class="form-control" [(ngModel)]="user.phone" id="phone">
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="website">Age</label>
+                <input type="url" name="age" class="form-control" [(ngModel)]="user.age" id="website">
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label>Salary</label>
+                <input type="number" #salary name="salary" class="form-control" [(ngModel)]="user.salary" id="salary" >
+              </div>
+            </div>
+          </div>
+          <app-child-form [user]="user" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" (buttonClicked)="parentEventHandler($event)"></app-child-form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    </form>
+
+
+  </div>
+
+
+</div>
+
+<p>Address : {{ address  }}</p>
+<p>Status with subject : {{ status }}</p>
+
+<app-search [PData]="pname.value" ></app-search>
+
