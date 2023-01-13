@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../shared/user";
 import {UserService} from "../../services/user.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-parent-form',
@@ -11,29 +12,59 @@ import {UserService} from "../../services/user.service";
 export class ParentFormComponent implements OnInit {
 
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
 
   public users: Array<User>;
+  valueEmittedFromChildComponent: any;
 
   parentForm : FormGroup;
+  /* public user: User = {
+    id: 0 ,
+    name: "",
+    age: "",
+    email: "",
+    phone:"",
+    salary: 500,
+    address: ""
+  }
+
+   */
+  public user = new User();
 
   ngOnInit() {
     this.getUsers();
-    this.parentForm = new FormGroup({
-      name: new FormControl(Validators.required),
-      email: new FormControl(Validators.required),
-      age: new FormControl(Validators.required),
-      phone: new FormControl(Validators.required)
+
+    /*this.parentForm = new FormGroup({
+      name: new FormControl(),
+      email: new FormControl(),
+      age: new FormControl(),
+      phone: new FormControl(),
+      salary: new FormControl(),
     })
+
+     */
   }
   public getUsers () :void {
-    this.userService.GetUsers().subscribe(
-      (res: Array<User>) => {
-        this.users= res;
-        console.log(this.users);
+    this.activatedRoute.data.subscribe(
+      (res) => {
+        this.users= res.users;
       }
     )
 }
+
+  public getUser() :void {
+    this.userService.GetUser(1).subscribe(
+      (res: User) => {
+        this.user= res;
+        console.log(this.user);
+      }
+    )
+  }
+
+
+  parentEventHandler(valueEmitted){
+    this.user.salary = valueEmitted;
+  }
 
 
 

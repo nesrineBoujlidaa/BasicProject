@@ -37,6 +37,9 @@ public class Person {
 
     @Column(name ="address")
     private String address;
+
+    @Column(name ="status")
+    private String status;
     }
 
 

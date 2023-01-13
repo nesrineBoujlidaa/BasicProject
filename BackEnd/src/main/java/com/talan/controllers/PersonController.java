@@ -38,6 +38,13 @@ public class PersonController {
 
     }
 
+    @PostMapping("/add")
+    public Long incrementSalary(@RequestBody Long salary) {
+
+        return salary;
+
+    }
+
     
     @DeleteMapping("/{id}")
     public void deletePerson(@PathVariable Integer id) {

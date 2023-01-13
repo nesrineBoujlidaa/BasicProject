@@ -3,5 +3,7 @@ export class User {
   name: string;
   age: string;
   email: string;
+  phone: string;
   salary: number;
-  address: string; }
+  address: string;
+  status: string;}
