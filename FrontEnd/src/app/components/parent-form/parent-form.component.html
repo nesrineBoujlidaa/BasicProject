@@ -35,29 +35,23 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div class="form-group">
                 <label>Salary</label>
-                <input type="number" #salary name="salary" class="form-control" [(ngModel)]="user.salary" id="salary" >
+                <input type="number" name="salary" class="form-control" [(ngModel)]="user.salary" id="salary" >
               </div>
             </div>
           </div>
           <app-child-form [user]="user" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" (buttonClicked)="parentEventHandler($event)"></app-child-form>
-
         </div>
-
       </div>
-
     </div>
-
-
     </form>
-
-
   </div>
-
-
 </div>
+  <p class="valueAccessor">Address : {{ address  }}</p>
+  <p class="subject">Status with subject : {{ status }}</p>
 
-<p>Address : {{ address  }}</p>
-<p>Status with subject : {{ status }}</p>
+<app-search style="position: relative; top: 200px; right: 25px;" [PData]="pname.value" ></app-search>
 
-<app-search [PData]="pname.value" ></app-search>
+
+
+
 

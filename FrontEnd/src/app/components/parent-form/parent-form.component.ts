@@ -15,8 +15,6 @@ export class ParentFormComponent implements OnInit {
   constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
 
   public users: Array<User>;
-  parentForm : FormGroup;
-  valueEmittedFromChildComponent: any;
   address:string='';
   status: string;
 
@@ -28,7 +26,6 @@ export class ParentFormComponent implements OnInit {
     });
 
     this.getUsers();
-
 
 
   }
@@ -49,12 +46,9 @@ export class ParentFormComponent implements OnInit {
     )
   }
 
-
   parentEventHandler(valueEmitted){
     this.user.salary = valueEmitted;
   }
-
-
 
 
 }

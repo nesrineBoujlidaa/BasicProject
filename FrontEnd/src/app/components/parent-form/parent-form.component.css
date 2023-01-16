@@ -58,4 +58,14 @@ body {
   border: 0;
   margin-bottom: 1rem;
 }
+.valueAccessor {
+  position: absolute;
+  top: 325px;
+  left: 635px;
+}
+.subject{
+  position: absolute;
+  top: 390px;
+  left: 635px;
+}
 

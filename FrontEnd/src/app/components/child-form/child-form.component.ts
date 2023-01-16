@@ -22,19 +22,9 @@ export class ChildFormComponent implements OnInit,ControlValueAccessor {
   field= "";
 
   childForm : FormGroup;
-  @Output()
-  buttonClicked: EventEmitter<any> = new EventEmitter<any>();
-  /* public user: User = {
-    id: 0 ,
-    name: "",
-    age: "",
-    email: "",
-    phone:"",
-    salary: 500,
-    address: ""
-  }
 
-   */
+  @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
+
   @Input() user: User;
 
   ngOnInit() {
@@ -57,9 +47,7 @@ export class ChildFormComponent implements OnInit,ControlValueAccessor {
     console.log(this.user.salary);
   }
 
-//value Accessor
-
-
+// value Accessor
   onChange: any = () => {}
   onTouch: any = () => {}
 

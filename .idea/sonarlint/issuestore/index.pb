@@ -1,6 +1,4 @@
 
-?
-BackEnd/pom.xml,3\f\3fab300db72ea27dd8a16ba3713fd432a9ff3910
 k
 ;BackEnd/src/main/java/com/talan/services/PersonService.java,4\7\4798b7bb1493814f2e5b6de91e296a0ea4663b19
 o
@@ -19,3 +17,7 @@ S
 #FrontEnd/src/app/app.component.html,a\5\a5347dc728646d055615b99dbd2f623680619d05
 q
 ABackEnd/src/main/java/com/talan/controllers/PersonController.java,9\a\9a4fb7e35c0335b3d3f1cade0dc093bc6d6e2a9c
+N
+FrontEnd/src/app/app.module.ts,3\8\3862ea800462ebe23363846bb910df2768044363
+d
+4BackEnd/src/main/java/com/talan/entities/Person.java,d\b\db8c934ca2f1588a35baa424b5cecf0f944c05bc
