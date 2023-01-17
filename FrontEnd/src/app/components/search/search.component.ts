@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {User} from "../../shared/user";
 import {ActivatedRoute} from "@angular/router";
 
@@ -8,9 +8,14 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+
   @Input() PData: string;
+  @Input() user: User;
+  @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
+  address:string='';
   constructor(private activatedRoute: ActivatedRoute) { }
   public users: Array<User>;
+
 
   ngOnInit() {
     this.getUsers();
@@ -23,6 +28,11 @@ export class SearchComponent implements OnInit {
         console.log(this.users);
       }
     )
+  }
+
+  showUser() {
+    this.buttonClicked.emit(this.user);
+    console.log(this.user);
   }
 
 }

@@ -9,20 +9,12 @@
       <input type="name"  [(ngModel)]="address" name="address" class="form-control" id="Street"
              >
       <label for="status">Status</label>
-      <input type="status" #status class="form-control"  formControlName ="status" id="status" placeholder="Enter status">
+      <input type="text" #status class="form-control" [(ngModel)]="status.value"   name="status" id="status" placeholder="Enter status">
 
     <button style="position: absolute; top:160px;" class="btn btn-outline-primary" (click)="sendMessage(status.value)">Send Status</button>
     </div>
   </div>
 
-</div>
-<div class="row gutters">
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="text-right">
-      <button type="button" id="submit"  style="position: absolute; top: 160px; left: 430px;" name="submit" [disabled] = "!childForm.valid" class="btn btn-primary">Add User</button>
-      <button type="button" id="cancel"  style="position: absolute; top: 160px; left: 550px;" name="cancel" class="btn btn-secondary">Cancel</button>
-    </div>
-  </div>
 </div>
 </form>
 

@@ -1,9 +1,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <div class="container mt-3 mb-4">
- <!-- <p>
+  <button type="submit" id="submit"  (click)="showUser()" style="position: absolute; bottom: 605px; left: 590px;" name="submit" class="btn btn-primary">Show details</button>
+  <p>
     Data from parent with Pipe : {{PData | uppercase}}
   </p>
-  -->
+  <div>
+    <p>name : {{user.name}}</p>
+    <p>email : {{user.email}}</p>
+    <p>age : {{user.age}}</p>
+    <p>phone : {{user.phone}}</p>
+    <p>address : {{user.address}}</p>
+    <p>status : {{user.status}}</p>
+  </div>
+
   <div class="col-lg-9 mt-4 mt-lg-0">
     <div class="row">
       <div class="col-md-12">

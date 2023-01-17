@@ -20,6 +20,7 @@ export class ChildFormComponent implements OnInit,ControlValueAccessor {
 
   constructor(private userService: UserService) { }
   field= "";
+  status="";
 
   childForm : FormGroup;
 
