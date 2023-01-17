@@ -17,7 +17,6 @@ export class ParentFormComponent implements OnInit {
 
   public users: Array<User>;
   address:string;
-  status: string;
 
   public user: User = {
     id: 0,
@@ -26,16 +25,12 @@ export class ParentFormComponent implements OnInit {
     email: "",
     phone:"",
     salary: 500,
-    address:"",
-    status: ""
+    address:""
 
  }
  parentForm: FormGroup;
 
   ngOnInit() {
-    this.userService.subject.subscribe((d) => {
-      this.status = d;
-    });
     this.getUsers();
     this.parentForm = this.fb.group({
       name: ['', Validators.required],
@@ -59,7 +54,6 @@ export class ParentFormComponent implements OnInit {
 
   public createUser(): void {
     this.parentForm.value.address= this.address;
-    this.parentForm.value.status= this.status;
     this.userService.CreateUser(this.parentForm.value).subscribe(
       val => {
         console.log(this.parentForm.value);

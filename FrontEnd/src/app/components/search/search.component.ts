@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
   @Input() PData: string;
   @Input() user: FormGroup;
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
-  address:string='';
+  address:string;
   constructor(private activatedRoute: ActivatedRoute) { }
   public users: Array<User>;
   clicked: boolean;

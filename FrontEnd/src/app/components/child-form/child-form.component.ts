@@ -1,6 +1,5 @@
 import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../../shared/user";
 import {UserService} from "../../services/user.service";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -30,8 +29,7 @@ export class ChildFormComponent implements OnInit,ControlValueAccessor {
 
   ngOnInit() {
     this.childForm = this.fb.group({
-      address: ['', Validators.required],
-      status: ['', Validators.required],
+      address: ['', Validators.required]
       }
     )
   }

@@ -17,8 +17,6 @@ S
 #FrontEnd/src/app/app.component.html,a\5\a5347dc728646d055615b99dbd2f623680619d05
 q
 ABackEnd/src/main/java/com/talan/controllers/PersonController.java,9\a\9a4fb7e35c0335b3d3f1cade0dc093bc6d6e2a9c
-d
-4BackEnd/src/main/java/com/talan/entities/Person.java,d\b\db8c934ca2f1588a35baa424b5cecf0f944c05bc
 g
 7FrontEnd/src/app/components/search/search.component.css,1\9\1937b1f92d98cb8f9392a9108a138dff540a4294
 ?
@@ -31,3 +29,9 @@ o
 ?FrontEnd/src/app/components/child-form/child-form.component.css,2\5\25aa57bee656c4dcecd3e818f56a4a384ac7cffe
 c
 3FrontEnd/src/app/services/users-resolver.service.ts,9\7\97349be709e1dd816fe2700279602b9dd6a48ad0
+N
+FrontEnd/src/app/app.module.ts,3\8\3862ea800462ebe23363846bb910df2768044363
+O
+FrontEnd/src/app/shared/user.ts,e\d\edb862b49019532e9a658f181de33e854c2aefa1
+d
+4BackEnd/src/main/java/com/talan/entities/Person.java,d\b\db8c934ca2f1588a35baa424b5cecf0f944c05bc

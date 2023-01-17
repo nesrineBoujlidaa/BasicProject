@@ -6,4 +6,4 @@ export class User {
   phone: string;
   salary: number;
   address: string;
-  status: string;}
+ }

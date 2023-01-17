@@ -18,9 +18,6 @@ export class UserService{
   subject = new Subject<string>();
 
 
-  sendMessage(message: string) {
-    this.subject.next(message);
-  }
   // Base url
 
   baseurl = 'http://localhost:8080/persons';
