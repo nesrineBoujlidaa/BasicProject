@@ -1,16 +1,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <div class="container mt-3 mb-4">
-  <button type="submit" id="submit"  (click)="showUser()" style="position: absolute; bottom: 605px; left: 590px;" name="submit" class="btn btn-primary">Show details</button>
+  <button type="submit" id="submit"  (click)="showUser()" style="position: relative; bottom: 94px; left: 190px;" name="submit" class="btn btn-primary">Show details</button>
   <p>
     Data from parent with Pipe : {{PData | uppercase}}
   </p>
-  <div>
-    <p>name : {{user.name}}</p>
-    <p>email : {{user.email}}</p>
-    <p>age : {{user.age}}</p>
-    <p>phone : {{user.phone}}</p>
-    <p>address : {{user.address}}</p>
-    <p>status : {{user.status}}</p>
+  <div *ngIf="clicked">
+   <div><p> name : {{user.value.name}}</p></div>
+    <div> <p>email : {{user.value.email}}</p></div>
+    <div><p>age : {{user.value.age}}</p></div>
+    <div><p>phone : {{user.value.phone}}</p></div>
+    <div>   <p>address : {{user.value.address}}</p></div>
+    <div><p>status : {{user.value.status}}</p></div>
+
   </div>
 
   <div class="col-lg-9 mt-4 mt-lg-0">

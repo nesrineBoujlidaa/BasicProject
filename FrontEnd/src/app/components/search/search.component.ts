@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {User} from "../../shared/user";
 import {ActivatedRoute} from "@angular/router";
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-search',
@@ -10,11 +11,12 @@ import {ActivatedRoute} from "@angular/router";
 export class SearchComponent implements OnInit {
 
   @Input() PData: string;
-  @Input() user: User;
+  @Input() user: FormGroup;
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
   address:string='';
   constructor(private activatedRoute: ActivatedRoute) { }
   public users: Array<User>;
+  clicked: boolean;
 
 
   ngOnInit() {
@@ -31,8 +33,9 @@ export class SearchComponent implements OnInit {
   }
 
   showUser() {
-    this.buttonClicked.emit(this.user);
-    console.log(this.user);
+    this.buttonClicked.emit(this.user.value);
+    this.clicked = true;
+    console.log(this.user.value);
   }
 
 }

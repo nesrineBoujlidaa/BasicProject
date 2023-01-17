@@ -16,7 +16,7 @@ export class ParentFormComponent implements OnInit {
               private fb:FormBuilder) { }
 
   public users: Array<User>;
-  address:string='';
+  address:string;
   status: string;
 
   public user: User = {
@@ -56,21 +56,13 @@ export class ParentFormComponent implements OnInit {
     )
 }
 
-  public getUser() :void {
-    this.userService.GetUser(1).subscribe(
-      (res: User) => {
-        this.user= res;
-        console.log(this.user);
-      }
-    )
-  }
 
   public createUser(): void {
-    this.user.address= this.address;
-    this.user.status= this.status;
-    this.userService.CreateUser(this.user).subscribe(
+    this.parentForm.value.address= this.address;
+    this.parentForm.value.status= this.status;
+    this.userService.CreateUser(this.parentForm.value).subscribe(
       val => {
-        console.log(this.user);
+        console.log(this.parentForm.value);
       },
       err => console.error('Observer got an error: ' + err)
 

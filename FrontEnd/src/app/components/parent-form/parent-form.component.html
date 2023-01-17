@@ -11,40 +11,40 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" #pname formControlName ="name" class="form-control" [(ngModel)]="user.name" id="fullName" >
+                <input type="text" #pname formControlName ="name" class="form-control"  id="fullName" >
               </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div class="form-group">
                 <label for="eMail">Email</label>
-                <input type="email" formControlName ="email" class="form-control" [(ngModel)]="user.email" id="eMail">
+                <input type="email" formControlName ="email" class="form-control"  id="eMail">
               </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="text" formControlName ="phone" class="form-control" [(ngModel)]="user.phone" id="phone">
+                <input type="text" formControlName ="phone" class="form-control"  id="phone">
               </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div class="form-group">
                 <label for="website">Age</label>
-                <input type="url" formControlName="age" class="form-control" [(ngModel)]="user.age" id="website">
+                <input type="url" formControlName="age" class="form-control"  id="website">
               </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div class="form-group">
                 <label>Salary</label>
-                <input type="number" formControlName="salary" class="form-control" [(ngModel)]="user.salary" id="salary" >
+                <input type="number" formControlName="salary" class="form-control"  id="salary" >
               </div>
             </div>
           </div>
-          <app-child-form [user]="user" [(ngModel)]="address" [ngModelOptions]="{standalone: true}"></app-child-form>
+          <app-child-form [user]="parentForm" [(ngModel)]="address" [ngModelOptions]="{standalone: true}"></app-child-form>
           <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="text-right">
-                <button type="submit" id="submit"  style="position: absolute; top: 160px; left: 530px;" name="submit" class="btn btn-primary">Add User</button>
-                <button type="button" id="cancel"  style="position: absolute; top: 160px; left: 650px;" name="cancel" class="btn btn-secondary">Cancel</button>
+                <button type="submit" id="submit"  style="position: absolute; top: 159px; left: 310px;" name="submit" class="btn btn-primary">Add User</button>
+                <!-- <button type="button" id="cancel"  style="position: absolute; top: 160px; left: 650px;" name="cancel" class="btn btn-secondary">Cancel</button> -->
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@
   <p class="valueAccessor">Address : {{ address  }}</p>
   <p class="subject">Status with subject : {{ status }}</p>
 
-<app-search [user]="user" (buttonClicked)="parentEventHandler($event)" style="position: relative; top: 200px; right: 25px;" [PData]="pname.value" ></app-search>
+<app-search [user]="parentForm" (buttonClicked)="parentEventHandler($event)" style="position: relative; top: 200px; right: 25px;" [PData]="pname.value" ></app-search>
 
 
 

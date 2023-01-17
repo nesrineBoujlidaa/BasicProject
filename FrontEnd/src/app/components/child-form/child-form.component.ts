@@ -1,5 +1,5 @@
 import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../shared/user";
 import {UserService} from "../../services/user.service";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -18,7 +18,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class ChildFormComponent implements OnInit,ControlValueAccessor {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private fb:FormBuilder) { }
   field= "";
   status="";
 
@@ -26,26 +26,21 @@ export class ChildFormComponent implements OnInit,ControlValueAccessor {
 
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
 
-  @Input() user: User;
+  @Input() user:FormGroup;
 
   ngOnInit() {
-    this.childForm = new FormGroup({
-      address: new FormControl()
-    })
-  }
-
-
-  public getUser() :void {
-    this.userService.GetUser(1).subscribe(
-      (res: User) => {
-        this.user= res;
-        console.log(this.user);
+    this.childForm = this.fb.group({
+      address: ['', Validators.required],
+      status: ['', Validators.required],
       }
     )
   }
+
+
+
   incrementSalary() {
-    this.buttonClicked.emit(Math.round(this.user.salary + 500) );
-    console.log(this.user.salary);
+    this.buttonClicked.emit(Math.round(this.user.value.salary + 500) );
+    console.log(this.user.value.salary);
   }
 
 // value Accessor
@@ -74,8 +69,4 @@ export class ChildFormComponent implements OnInit,ControlValueAccessor {
     this.onTouch = onTouched;
   }
 
-
-  sendMessage(message) {
-    this.userService.sendMessage(message);
-  }
 }
