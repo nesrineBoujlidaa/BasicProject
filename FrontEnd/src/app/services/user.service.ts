@@ -15,9 +15,13 @@ export class UserService{
 
 
 
-  subject = new Subject<string>();
+  subject = new Subject<number>();
 
 
+  sendMessage(message: number) {
+    this.subject.next(message+ 500);
+
+  }
   // Base url
 
   baseurl = 'http://localhost:8080/persons';

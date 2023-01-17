@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <div class="container mt-3 mb-4">
   <button type="submit" id="submit"  (click)="showUser()" style="position: relative; bottom: 94px; left: 190px;" name="submit" class="btn btn-primary">Show details</button>
+  <button type="button" id="increment" (click)="sendMessage(user.value.salary)" class="btn btn-secondary">Increment</button>
+
   <p>
     Data from parent with Pipe : {{PData | uppercase}}
   </p>
@@ -9,7 +11,8 @@
     <div> <p>email : {{user.value.email}}</p></div>
     <div><p>age : {{user.value.age}}</p></div>
     <div><p>phone : {{user.value.phone}}</p></div>
-    <div>   <p>address : {{user.value.address}}</p></div>
+    <div><p>salary : {{user.value.salary}}</p></div>
+    <div><p>address : {{user.value.address}}</p></div>
 
   </div>
 

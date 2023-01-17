@@ -2,6 +2,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {User} from "../../shared/user";
 import {ActivatedRoute} from "@angular/router";
 import {FormGroup} from "@angular/forms";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-search',
@@ -13,14 +14,26 @@ export class SearchComponent implements OnInit {
   @Input() PData: string;
   @Input() user: FormGroup;
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
-  address:string;
-  constructor(private activatedRoute: ActivatedRoute) { }
+
+
+
+  address:string='';
+  constructor(private userService: UserService,private activatedRoute: ActivatedRoute) { }
   public users: Array<User>;
   clicked: boolean;
 
 
   ngOnInit() {
     this.getUsers();
+    this.userService.subject.subscribe((d) => {
+      this.user.value.salary = d ;
+
+    });
+  }
+
+
+  sendMessage(message) {
+    this.userService.sendMessage(message);
   }
 
   public getUsers () :void {
