@@ -15,11 +15,12 @@ export class UserService{
 
 
 
-  subject = new Subject<string>();
+  subject = new Subject<number>();
 
 
-  sendMessage(message: string) {
-    this.subject.next(message);
+  sendMessage(message: number) {
+    this.subject.next(message+ 500);
+
   }
   // Base url
 
