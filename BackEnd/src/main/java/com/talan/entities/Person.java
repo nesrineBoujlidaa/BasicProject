@@ -27,7 +27,7 @@ public class Person {
     private String email;
 
     @Column(name ="age")
-    private String age;
+    private Long age;
 
     @Column(name ="phone")
     private String phone;

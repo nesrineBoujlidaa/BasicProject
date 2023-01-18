@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../../shared/user";
 import {UserService} from "../../services/user.service";
 import {ActivatedRoute} from "@angular/router";
@@ -23,7 +23,7 @@ export class ParentFormComponent implements OnInit {
   public user: User = {
     id: 0,
     name: "",
-    age: "",
+    age: 0,
     email: "",
     phone:"",
     salary: 500,
@@ -62,9 +62,11 @@ export class ParentFormComponent implements OnInit {
 
 
   public createUser(): void {
-    this.parentForm.value.address= this.address;
+    this.parentForm.value.address= this.parentForm.get('address').value;
+    console.log(this.parentForm.value.address);
+    console.log(this.parentForm.get('address').value);
     this.userService.CreateUser(this.parentForm.value).subscribe(
-      val => {
+      () => {
         console.log(this.parentForm.value);
       },
       err => console.error('Observer got an error: ' + err)
