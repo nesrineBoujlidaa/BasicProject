@@ -1,7 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <div class="container mt-3 mb-4">
-  <button type="submit" id="submit"  (click)="showUser()" style="position: relative; bottom: 94px; left: 190px;" name="submit" class="btn btn-primary">Show details</button>
-  <button type="button" id="increment" style="position: relative; bottom:95px;right:100px;" (click)="sendMessage(user.value.salary)" class="btn btn-secondary">Salary <i class="fa fa-plus" aria-hidden="true"></i> 500</button>
+  <button type="submit" id="submit"
+          (click)="showUser()"
+          style="position: relative; bottom:98px; left: 280px;"
+          name="submit"
+          class="btn btn-primary">Show details</button>
+  <button type="button"
+          id="increment" style="position: relative; bottom:98px; left:20px;"
+          (click)="sendMessage(user.value.salary)"
+          class="btn btn-secondary"> Salary
+          <i class="fa fa-plus" aria-hidden="true"></i> 500</button>
+  <button type="button"  id="check"
+          style="position: absolute;
+          left: 250px;
+          bottom: 767px;"
+          (click)="checkEvent(user.value.salary)"
+          class="btn btn-secondary">Check</button>
   <button type="submit" (click)="incrementAge()"
           style="position: relative; left: 235px; bottom: 310px;"
           id="incrementAge"
