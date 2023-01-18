@@ -26,12 +26,14 @@ export class UserService{
 
   baseurl = 'http://localhost:8080/persons';
   constructor(private http: HttpClient) {}
+
   // Http Headers
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   };
+
   // POST
   CreateUser(data): Observable<User> {
     return this.http
@@ -42,18 +44,21 @@ export class UserService{
       )
       .pipe(retry(1), catchError(this.errorHandl));
   }
+
   // GET
   GetUser(id): Observable<User> {
     return this.http
       .get<User>(this.baseurl + '/' + id)
       .pipe(retry(1), catchError(this.errorHandl));
   }
+
   // GET
   GetUsers(): Observable<Array<User>> {
     return this.http
       .get<Array<User>>(this.baseurl + '/')
       .pipe(retry(1), catchError(this.errorHandl));
   }
+
   // PUT
   UpdateUser(id, data): Observable<User> {
     return this.http
@@ -64,12 +69,14 @@ export class UserService{
       )
       .pipe(retry(1), catchError(this.errorHandl));
   }
+
   // DELETE
   DeleteUser(id) {
     return this.http
       .delete<User>(this.baseurl + '/' + id, this.httpOptions)
       .pipe(retry(1), catchError(this.errorHandl));
   }
+
   // Error handling
   errorHandl(error) {
     let errorMessage = '';

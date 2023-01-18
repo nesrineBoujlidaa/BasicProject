@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <div class="container mt-3 mb-4">
   <button type="submit" id="submit"  (click)="showUser()" style="position: relative; bottom: 94px; left: 190px;" name="submit" class="btn btn-primary">Show details</button>
-  <button type="button" id="increment" (click)="sendMessage(user.value.salary)" class="btn btn-secondary">Increment</button>
+  <button type="button" id="increment" style="position: relative; bottom:95px;right:100px;" (click)="sendMessage(user.value.salary)" class="btn btn-secondary">Salary <i class="fa fa-plus" aria-hidden="true"></i> 500</button>
+  <button type="submit" (click)="incrementAge()"
+          style="position: relative; left: 235px; bottom: 310px;"
+          id="incrementAge"
+          name="submit"
+          class="btn btn-secondary">Age <i class="fa fa-plus" aria-hidden="true"> 2</i></button>
 
   <p>
     Data from parent with Pipe : {{PData | uppercase}}
@@ -47,9 +52,7 @@
               </td>
               <td>
                 <ul class="list-unstyled mb-0 d-flex justify-content-end">
-                  <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
-                  <li><a href="#" class="text-info" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a></li>
-                  <li><a href="#" class="text-danger" data-toggle="tooltip" title="" data-original-title="Delete"><i class="far fa-trash-alt"></i></a></li>
+                  <button (click)="deleteUser(user.id)" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                 </ul>
               </td>
             </tr>
