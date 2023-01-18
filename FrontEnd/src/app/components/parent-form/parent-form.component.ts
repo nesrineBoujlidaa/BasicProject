@@ -38,6 +38,7 @@ export class ParentFormComponent implements OnInit {
     this.userService.subject.subscribe((d) => {
       this.salary = d ;
     });
+    this.compare(this.salary);
 
     this.getUsers();
     this.parentForm = this.fb.group({
@@ -60,7 +61,11 @@ export class ParentFormComponent implements OnInit {
     )
 }
 
-
+compare(salary){
+    if(salary>3000){
+      alert ("too much");
+    }
+}
   public createUser(): void {
     this.parentForm.value.address= this.address;
 

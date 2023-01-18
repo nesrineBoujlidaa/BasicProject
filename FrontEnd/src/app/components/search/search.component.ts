@@ -3,7 +3,7 @@ import {User} from "../../shared/user";
 import {ActivatedRoute} from "@angular/router";
 import {FormGroup} from "@angular/forms";
 import {UserService} from "../../services/user.service";
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -15,6 +15,9 @@ export class SearchComponent implements OnInit {
   @Input() user: FormGroup;
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
   address:string='';
+  private event = new EventEmitter();
+
+
   constructor(private userService: UserService,private activatedRoute: ActivatedRoute) { }
   public users: Array<User>;
   clicked: boolean;
@@ -48,4 +51,35 @@ export class SearchComponent implements OnInit {
     console.log(this.user.value);
   }
 
+
+  showSuccessMessage(
+    title, message, icon = null,
+    showCancelButton = true) {
+    return Swal.fire({
+      title: title,
+      text: message,
+      icon: icon,
+      showCancelButton: showCancelButton
+    })
+  }
+
+  checkEvent(salary) {
+    if (salary >= 3000) {
+      this.event.emit(this.showSuccessMessage(
+        '',
+        'you reached the limit',
+        'error',
+        true,
+      ));
+    }
+    else{
+      this.event.emit(this.showSuccessMessage(
+        '',
+        'you did not reach the limit',
+        'success',
+        true,
+      ));
+    }
+
+  }
 }
