@@ -46,17 +46,26 @@ export class SearchComponent implements OnInit {
   showUser() {
     this.buttonClicked.emit(this.user.value);
     this.clicked = true;
-    console.log(this.user.value);
+    console.log("this is user from search component : ",this.user.value);
   }
-  @Input() incrementAge() {
-  this.user.value.age += 2;
-  console.log(this.user.value.age);
+  hideUser() {
+    this.clicked = false;
+    window.location.reload();
+  }
+  @Input()
+  set agePlus (val: number) {
+    this.user.value.age+=val;
+    console.log("this is nothing");
+  }
+  incrementAge() {
+    this.agePlus = 2;
   }
 
   public deleteUser(id: number) : void {
     this.userService.DeleteUser(id).subscribe(
       () => {
         console.log("user deleted");
+        window.location.reload();
       },
       err => console.error('Observer got an error: ' + err)
     );

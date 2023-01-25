@@ -1,23 +1,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <div class="container mt-3 mb-4">
-  <button type="submit" id="submit"
+  <button *ngIf="!clicked" type="submit" id="submit"
           (click)="showUser()"
           style="position: relative; bottom:98px; left: 280px;"
           name="submit"
           class="btn btn-primary">Show details</button>
+  <button *ngIf="clicked" type="submit" id="cancel"
+          (click)="hideUser()"
+          style="position: relative; bottom:98px; left: 280px;"
+          name="submit"
+          class="btn btn-primary">Hide details</button>
   <button type="button"
           id="increment" style="position: relative; bottom:98px; left:20px;"
           (click)="sendMessage(user.value.salary)"
           class="btn btn-secondary"> Salary
           <i class="fa fa-plus" aria-hidden="true"></i> 500</button>
   <button type="button"  id="check"
-          style="position: absolute;
-          left: 250px;
-          bottom: 767px;"
+          style="position: relative;
+          right: 200px;
+          bottom: 98px;"
           (click)="checkEvent(user.value.salary)"
           class="btn btn-secondary">Check</button>
   <button type="submit" (click)="incrementAge()"
-          style="position: relative; left: 235px; bottom: 310px;"
+          style="position: relative; left: 160px; bottom: 310px;"
           id="incrementAge"
           name="submit"
           class="btn btn-secondary">Age <i class="fa fa-plus" aria-hidden="true"> 2</i></button>
@@ -72,17 +77,6 @@
             </tr>
             </tbody>
           </table>
-          <div class="text-center mt-3 mt-sm-3">
-            <ul class="pagination justify-content-center mb-0">
-              <li class="page-item disabled"> <span class="page-link">Prev</span> </li>
-              <li class="page-item active" aria-current="page"><span class="page-link">1 </span> <span class="sr-only">(current)</span></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">...</a></li>
-              <li class="page-item"><a class="page-link" href="#">25</a></li>
-              <li class="page-item"> <a class="page-link" href="#">Next</a> </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>

@@ -42,21 +42,21 @@ export class UserService{
         JSON.stringify(data),
         this.httpOptions
       )
-      .pipe(retry(1), catchError(this.errorHandl));
+      .pipe(retry(1), catchError(this.errorHandle));
   }
 
   // GET
   GetUser(id): Observable<User> {
     return this.http
       .get<User>(this.baseurl + '/' + id)
-      .pipe(retry(1), catchError(this.errorHandl));
+      .pipe(retry(1), catchError(this.errorHandle));
   }
 
   // GET
   GetUsers(): Observable<Array<User>> {
     return this.http
       .get<Array<User>>(this.baseurl + '/')
-      .pipe(retry(1), catchError(this.errorHandl));
+      .pipe(retry(1), catchError(this.errorHandle));
   }
 
   // PUT
@@ -67,18 +67,18 @@ export class UserService{
         JSON.stringify(data),
         this.httpOptions
       )
-      .pipe(retry(1), catchError(this.errorHandl));
+      .pipe(retry(1), catchError(this.errorHandle));
   }
 
   // DELETE
   DeleteUser(id) {
     return this.http
       .delete<User>(this.baseurl + '/' + id, this.httpOptions)
-      .pipe(retry(1), catchError(this.errorHandl));
+      .pipe(retry(1), catchError(this.errorHandle));
   }
 
   // Error handling
-  errorHandl(error) {
+  errorHandle(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error
@@ -92,4 +92,5 @@ export class UserService{
       return errorMessage;
     });
   }
+
 }

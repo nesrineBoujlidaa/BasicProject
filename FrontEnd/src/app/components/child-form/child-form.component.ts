@@ -1,7 +1,6 @@
 import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators, ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {UserService} from "../../services/user.service";
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-child-form',
