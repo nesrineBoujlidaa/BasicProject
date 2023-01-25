@@ -64,7 +64,8 @@
         touched : {{ parentForm.get('address').touched  }}</p>
 
 
-<app-search [user]="parentForm" (buttonClicked)="parentEventHandler($event)" style="position: relative; top: 200px; right: 25px;" [PData]="pname.value" ></app-search>
+<app-search [user]="parentForm"
+            (buttonClicked)="parentEventHandler($event)" style="position: relative; top: 200px; right: 25px;" [PData]="pname.value" ></app-search>
 
 
 
